@@ -1,0 +1,3 @@
+include ':FirstAppLibrary'
+include ':app'
+rootProject.name = "SampleLibrary"
