@@ -14,9 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class TestingClass extends AppCompatActivity {
-    private static final int UPI_PAYMENT = 200;
-    Context mActivity;
-    public void TestingClass(Context c, String message){
+    public static final int UPI_PAYMENT = 200;
+    public static Context mActivity;
+    public static void TestingClass(Context c, String message){
         mActivity=c;
 
         Toast.makeText(c,message, Toast.LENGTH_LONG).show();
@@ -32,7 +32,7 @@ public class TestingClass extends AppCompatActivity {
         }
         return false;
     }
-    void payUsingUpi(String name, String upiId, String note, String amount) {
+    public void payUsingUpi(String name, String upiId, String note, String amount) {
         Log.e("main ", "name " + name + "--up--" + upiId + "--" + note + "--" + amount);
         Uri uri = Uri.parse("upi://pay").buildUpon()
                 .appendQueryParameter("pa", upiId)
@@ -58,7 +58,7 @@ public class TestingClass extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.e("main ", "response " + resultCode);
         /*
@@ -93,7 +93,7 @@ public class TestingClass extends AppCompatActivity {
         }
     }
 
-    private void upiPaymentDataOperation(ArrayList<String> data) {
+    public static void upiPaymentDataOperation(ArrayList<String> data) {
         if (isConnectionAvailable(mActivity)) {
             String str = data.get(0);
             Log.e("UPIPAY", "upiPaymentDataOperation: " + str);
