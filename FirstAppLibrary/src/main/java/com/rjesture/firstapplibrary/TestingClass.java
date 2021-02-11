@@ -19,7 +19,7 @@ public class TestingClass extends AppCompatActivity {
     public void TestingClass(Context c, String message){
         mActivity=c;
 
-        Toast.makeText(c,message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(c,message, Toast.LENGTH_LONG).show();
 
     }
     public static boolean isConnectionAvailable(Context context) {
