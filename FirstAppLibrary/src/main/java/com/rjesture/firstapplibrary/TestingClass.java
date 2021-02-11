@@ -18,6 +18,7 @@ public class TestingClass extends AppCompatActivity {
     Context mActivity;
     public void TestingClass(Context c, String message){
         mActivity=c;
+
         Toast.makeText(c,message, Toast.LENGTH_SHORT).show();
 
     }
